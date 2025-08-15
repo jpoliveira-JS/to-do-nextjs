@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+$primary: #067B95;
+$secondary: #6C757D;
+$font-family-sans-serif: 'Inter';
+
+@import "bootstrap/scss/bootstrap.scss";
+
+body {
+  padding: 1.5rem;
+}
+
+main {
+  &.container {
+    max-width: 1110px
+  }
+}
+
+.card {
+  background-color: $gray-100;
+  border-color: $gray-400;
+  border-radius: 8px;
+  padding: 32px;
+  filter: drop-shadow(0px -5px #67C0C2)
+}
+
+.header {
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+h1 {
+  color: $gray-900;
+  font-weight: 700;
+  line-height: 100%;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  margin: 8px 0px;
+}
+
+
+.base-text {
+  color: $gray-900;
+  font-weight: 400;
+  line-height: 28px;
+  font-size: 16px;
+}
+
+.mb-6px { margin-bottom: 6px; }
+
+.add-task {
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.task-input {
+  max-width: 403px;
+  width: 100%;
+}
+
+.task-add-btn {
+  max-width: 159px;
+  width: 100%;
+}
+
+.page-btn {
+  max-width: 159px;
+  width: 100%;
+}
+
+.current-page {
+  width: 40px;
+  height: 40px;
+  background-color: $primary;
+  color: #FFFFFF;
+  border-radius: 4px;
+}
