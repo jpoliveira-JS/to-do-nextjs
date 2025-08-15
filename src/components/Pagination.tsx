@@ -29,7 +29,7 @@ const Pagination: React.FC = () => {
         aria-label='Seleciona tarefas por página'
         value={selectedPage}
         onChange={e => setSelectedPage(Number(e.target.value))}
-        style={{ maxWidth: 66 }}
+        style={{ maxWidth: 64 }}
       >
         <option value='8'>8</option>
         <option value='16'>16</option>
