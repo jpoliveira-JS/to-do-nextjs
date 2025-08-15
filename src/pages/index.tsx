@@ -3,8 +3,26 @@ import Container from 'react-bootstrap/Container'
 import Header from '@/components/Header'
 import AddTask from '@/components/AddTask'
 import Pagination from '@/components/Pagination'
+import TaskTable, { Task } from '@/components/TaskTable'
+import { useTable } from '@/hooks/useTable'
+import Footer from '@/components/Footer'
 
 export default function Home() {
+
+  const {
+    currentData,
+    currentPage,
+    totalPages,
+    total,
+    itemsPerPage,
+    addItem,
+    removeItem,
+    updateItem,
+    nextPage,
+    prevPage,
+    setItemsPerPage
+  } = useTable<Task>()
+
   return (
     <>
       <Head>
@@ -20,14 +38,34 @@ export default function Home() {
         <Header />
         <Container className='card'>
           <h1>As minhas tarefas</h1>
-          <div className='d-flex flex-row gap-5'>
+          <div className='d-flex flex-row align-items-end gap-5'>
             <div className='flex-grow-1' style={{ maxWidth: 570 }}>
-              <AddTask />
+              <AddTask addItem={addItem}/>
             </div>
-            <Pagination />
+            <Pagination
+              nextPage={nextPage}
+              prevPage={prevPage}
+              itemsPerPage={itemsPerPage}
+              changeItemsPerPage={setItemsPerPage}
+              currentPage={currentPage}
+              totalPages={totalPages}
+            />
+          </div>
+          <TaskTable items={currentData} updateItem={updateItem} removeItem={removeItem}/>
+          <div className='d-flex justify-content-between align-items-center'>
+            <p className='blockquote m-0'>Total de tarefas: {total}</p>
+            <Pagination
+              nextPage={nextPage}
+              prevPage={prevPage}
+              itemsPerPage={itemsPerPage}
+              changeItemsPerPage={setItemsPerPage}
+              currentPage={currentPage}
+              totalPages={totalPages}
+            />
           </div>
         </Container>
       </Container>
+      <Footer />
     </>
   )
 }

@@ -2,9 +2,26 @@ import { useState } from 'react'
 import { Container } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import { Task } from './TaskTable'
+import { getCurrentDate } from '@/utils/date'
 
-const AddTask: React.FC = () => {
+interface Props {
+  addItem: (item: Task) => void
+}
+
+
+const AddTask: React.FC<Props> = ({addItem}) => {
   const [inputValue, setInputValue] = useState('')
+
+  const handleAdd = () => {
+    const date = getCurrentDate()
+    const item = {
+      created_at: date,
+      id: crypto.randomUUID(),
+      description: inputValue,
+    }
+    addItem(item)
+  }
 
   return (
     <div className='p-0 mt-3 d-flex flex-row'>
@@ -18,7 +35,7 @@ const AddTask: React.FC = () => {
           />
         </Form.Group>
       </Form>
-      <Button className='align-self-end ms-2 task-add-btn' variant='primary'>
+      <Button className='align-self-end ms-2 task-add-btn' variant='primary' onClick={() => handleAdd()}>
         Adicionar Tarefa
       </Button>
     </div>

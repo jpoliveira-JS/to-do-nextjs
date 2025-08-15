@@ -2,18 +2,24 @@
 
 $primary: #067B95;
 $secondary: #6C757D;
+$success: #28A745;
 $font-family-sans-serif: 'Inter';
+$table-bg: transparent;
 
 @import "bootstrap/scss/bootstrap.scss";
 
 body {
-  padding: 1.5rem;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  &.blockquote {
+    font-weight: 500;
+    font-size: 20px;
+  }
 }
 
-main {
-  &.container {
-    max-width: 1110px
-  }
+.container {
+  max-width: 1110px
 }
 
 .card {
@@ -25,7 +31,7 @@ main {
 }
 
 .header {
-  margin-top: 24px;
+  margin-top: 48px;
   margin-bottom: 48px;
 }
 
@@ -65,6 +71,21 @@ h1 {
   width: 100%;
 }
 
+.remove-task-btn {
+  background-color: $red-100;
+  color: $red-700;
+  font-weight: 600;
+  font-size: 16px;
+  border: 0;
+  padding: 6px 16px;
+}
+
+.task-complete-tag {
+  font-weight: 600;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
 .page-btn {
   max-width: 159px;
   width: 100%;
@@ -76,4 +97,10 @@ h1 {
   background-color: $primary;
   color: #FFFFFF;
   border-radius: 4px;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  height: 128px;
 }
