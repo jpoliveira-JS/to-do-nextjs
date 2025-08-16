@@ -1,25 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
-$primary: #067B95;
-$secondary: #6C757D;
-$success: #28A745;
-$font-family-sans-serif: 'Inter';
+$primary: #067b95;
+$secondary: #6c757d;
+$success: #28a745;
+$font-family-sans-serif: "Inter";
 $table-bg: transparent;
 
 @import "bootstrap/scss/bootstrap.scss";
 
-body {
-  min-height: 100dvh;
+.blockquote {
+  color: $gray-700;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.content {
+  min-height: calc(100vh - 1px); //fixes scrollbar
   display: flex;
   flex-direction: column;
-  &.blockquote {
-    font-weight: 500;
-    font-size: 20px;
-  }
 }
 
 .container {
-  max-width: 1110px
+  max-width: 1110px;
 }
 
 .card {
@@ -27,7 +29,7 @@ body {
   border-color: $gray-400;
   border-radius: 8px;
   padding: 32px;
-  filter: drop-shadow(0px -5px #67C0C2)
+  filter: drop-shadow(0px -5px #67c0c2);
 }
 
 .header {
@@ -44,15 +46,16 @@ h1 {
   margin: 8px 0px;
 }
 
-
 .base-text {
-  color: $gray-900;
+  color: $gray-700;
   font-weight: 400;
   line-height: 28px;
   font-size: 16px;
 }
 
-.mb-6px { margin-bottom: 6px; }
+.mb-6px {
+  margin-bottom: 6px;
+}
 
 .add-task {
   padding: 0;
@@ -91,16 +94,48 @@ h1 {
   width: 100%;
 }
 
+.toast-font {
+  color: $white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
 .current-page {
   width: 40px;
   height: 40px;
   background-color: $primary;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 4px;
 }
 
 footer {
+  border-top: 1px solid $gray-400;
+  align-self: end;
   margin-top: auto;
   width: 100%;
   height: 128px;
+}
+
+.table-head {
+  font-weight: 800;
+  font-size: 16px;
+  color: $gray-900;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.table-row {
+  font-weight: 400;
+  font-size: 16px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.border-gray-200 {
+  border: 1px solid;
+  border-color: $gray-200;
+}
+
+.gray-700 {
+  color: $gray-700;
 }
